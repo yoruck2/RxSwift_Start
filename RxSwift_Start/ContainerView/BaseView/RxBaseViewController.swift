@@ -15,7 +15,6 @@ class RxBaseViewController: UIViewController {
     
     init() {
         super.init(nibName: .none, bundle: .none)
-        navigationItem.title = "Rx START"
     }
 
     func configureNavigationBar() {
@@ -31,11 +30,13 @@ class RxBaseViewController: UIViewController {
         configureHierarchy()
         configureLayout()
         configureView()
+        bind()
     }
     
     func configureHierarchy() {}
     func configureLayout() {}
     func configureView() { view.backgroundColor = .white }
+    func bind() {}
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
