@@ -5,4 +5,8 @@
 //  Created by dopamint on 8/2/24.
 //
 
-import Foundation
+import UIKit
+
+class PhoneViewController: RxBaseViewController {
+    
+}
