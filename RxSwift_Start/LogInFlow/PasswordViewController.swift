@@ -11,12 +11,13 @@ import RxSwift
 import RxCocoa
 
 class PasswordViewController: RxBaseViewController {
+    
     let passwordTextField = SignTextField(placeholderText: "비밀번호를 입력해주세요 :)")
     let nextButton = SignUpButton(title: "다음")
     let descriptionLabel = UILabel()
     
     override func bind() {
-        
+            
         let validation = passwordTextField.rx.text
             .orEmpty
             .map { text -> (Bool, String) in

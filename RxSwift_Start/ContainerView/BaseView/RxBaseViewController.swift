@@ -42,3 +42,21 @@ class RxBaseViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+extension RxBaseViewController {
+    func changeRootVC(_ rootViewController: UIViewController) {
+        
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let sceneDelegate = windowScene.delegate as? SceneDelegate,
+              let window = sceneDelegate.window else { return }
+        
+        UIView.transition(with: window,
+                          duration: 0.3,
+                          options: .transitionCrossDissolve,
+                          animations: {
+            window.rootViewController = rootViewController
+            UIView.setAnimationsEnabled(UIView.areAnimationsEnabled)
+        })
+        window.makeKeyAndVisible()
+    }
+}

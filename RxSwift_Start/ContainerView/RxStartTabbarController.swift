@@ -22,7 +22,7 @@ final class RxStartTabBarController: UITabBarController {
         
         if let items = tabBar.items {
             items[0].image = UIImage(systemName: "pencil.line")
-            items[0].title = "signUp"
+            items[0].title = "LogIn"
             items[1].image = UIImage(systemName: "bag.fill")
             items[1].title = "Shopping List"
         }

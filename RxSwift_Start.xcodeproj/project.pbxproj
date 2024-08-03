@@ -25,6 +25,9 @@
 		84F6F83D2C5CBE10004616FD /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F83C2C5CBE10004616FD /* Color.swift */; };
 		84F6F83F2C5CD20A004616FD /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F83E2C5CD20A004616FD /* PhoneViewController.swift */; };
 		84F6F8412C5CD21B004616FD /* SignUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F8402C5CD21B004616FD /* SignUpButton.swift */; };
+		84F6F8432C5CE12E004616FD /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F8422C5CE12E004616FD /* BirthdayViewController.swift */; };
+		84F6F8452C5E5085004616FD /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F8442C5E5085004616FD /* EmailViewController.swift */; };
+		84F6F8472C5E683D004616FD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F8462C5E683D004616FD /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		84F6F83C2C5CBE10004616FD /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		84F6F83E2C5CD20A004616FD /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		84F6F8402C5CD21B004616FD /* SignUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButton.swift; sourceTree = "<group>"; };
+		84F6F8422C5CE12E004616FD /* BirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewController.swift; sourceTree = "<group>"; };
+		84F6F8442C5E5085004616FD /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
+		84F6F8462C5E683D004616FD /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +90,7 @@
 				84F6F8322C5CB59D004616FD /* App */,
 				84F6F82A2C5CB39E004616FD /* ContainerView */,
 				84F6F8362C5CBC94004616FD /* CustomView */,
-				84F6F82F2C5CB4B3004616FD /* SignUpFlow */,
+				84F6F82F2C5CB4B3004616FD /* LogInFlow */,
 				84F6F8332C5CB61B004616FD /* ShoppingList */,
 				84F6F81E2C5CB305004616FD /* Resource */,
 				84F6F8132C5CB1F9004616FD /* Info.plist */,
@@ -120,13 +126,16 @@
 			path = ContainerView;
 			sourceTree = "<group>";
 		};
-		84F6F82F2C5CB4B3004616FD /* SignUpFlow */ = {
+		84F6F82F2C5CB4B3004616FD /* LogInFlow */ = {
 			isa = PBXGroup;
 			children = (
+				84F6F8462C5E683D004616FD /* SignInViewController.swift */,
+				84F6F8442C5E5085004616FD /* EmailViewController.swift */,
 				84F6F8302C5CB52B004616FD /* PasswordViewController.swift */,
 				84F6F83E2C5CD20A004616FD /* PhoneViewController.swift */,
+				84F6F8422C5CE12E004616FD /* BirthdayViewController.swift */,
 			);
-			path = SignUpFlow;
+			path = LogInFlow;
 			sourceTree = "<group>";
 		};
 		84F6F8322C5CB59D004616FD /* App */ = {
@@ -242,6 +251,9 @@
 				84F6F8292C5CB38A004616FD /* RxBaseViewController.swift in Sources */,
 				84F6F83D2C5CBE10004616FD /* Color.swift in Sources */,
 				84F6F8312C5CB52B004616FD /* PasswordViewController.swift in Sources */,
+				84F6F8472C5E683D004616FD /* SignInViewController.swift in Sources */,
+				84F6F8432C5CE12E004616FD /* BirthdayViewController.swift in Sources */,
+				84F6F8452C5E5085004616FD /* EmailViewController.swift in Sources */,
 				84F6F8352C5CB661004616FD /* ShoppingListViewController.swift in Sources */,
 				84F6F8062C5CB1F7004616FD /* AppDelegate.swift in Sources */,
 				84F6F82C2C5CB3D2004616FD /* RxStartNavigationController.swift in Sources */,
