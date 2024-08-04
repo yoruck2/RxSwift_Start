@@ -82,6 +82,4 @@ class SignInViewController: RxBaseViewController {
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(20)
         }
     }
-    
-
 }

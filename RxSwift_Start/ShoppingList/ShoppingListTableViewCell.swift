@@ -50,7 +50,7 @@ class ShoppingListTableViewCell: UITableViewCell {
         doneButton.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().inset(15)
-            make.width.height.equalTo(30)
+            make.width.height.equalTo(40)
         }
         shoppingLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
@@ -59,11 +59,13 @@ class ShoppingListTableViewCell: UITableViewCell {
         favoriteButton.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.trailing.equalToSuperview().inset(15)
+            make.width.height.equalTo(40)
         }
     }
     
     
     func configureView() {
+        selectionStyle = .none
         contentView.backgroundColor = #colorLiteral(red: 0.8980386853, green: 0.898039639, blue: 0.9195435643, alpha: 1)
         contentView.layer.cornerRadius = 15
         contentView.clipsToBounds = true
