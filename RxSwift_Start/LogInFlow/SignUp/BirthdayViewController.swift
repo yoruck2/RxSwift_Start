@@ -124,7 +124,7 @@ class BirthdayViewController: RxBaseViewController {
                                       preferredStyle: .alert)
         let ok = UIAlertAction(title: "로그인 하러 가기",
                                style: .default) { [weak self] _ in
-            self?.changeRootVC(LogInViewController())
+            self?.changeRootVC(SignInViewController())
         }
         alert.addAction(ok)
         self.present(alert, animated: true)

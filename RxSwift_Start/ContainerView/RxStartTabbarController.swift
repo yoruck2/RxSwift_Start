@@ -13,7 +13,7 @@ final class RxStartTabBarController: UITabBarController {
         super.viewDidLoad()
         
         let signUpVC = RxStartNavigationController(
-            rootViewController: PasswordViewController())
+            rootViewController: SignInViewController())
         
         let shoppingListVC = RxStartNavigationController(
             rootViewController: ShoppingListViewController())
@@ -29,3 +29,16 @@ final class RxStartTabBarController: UITabBarController {
     }
 }
 
+extension RxStartTabBarController {
+    func replaceViewController(at index: Int, with newViewController: UIViewController) {
+            guard index >= 0 && index < (viewControllers?.count ?? 0) else {
+                return
+            }
+            
+            var updatedViewControllers = viewControllers ?? []
+            let newNavigationController = RxStartNavigationController(rootViewController: newViewController)
+            updatedViewControllers[index] = newNavigationController
+            
+            setViewControllers(updatedViewControllers, animated: false)
+        }
+}
