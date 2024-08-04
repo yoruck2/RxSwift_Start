@@ -22,12 +22,17 @@
 		84F6F8312C5CB52B004616FD /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F8302C5CB52B004616FD /* PasswordViewController.swift */; };
 		84F6F8352C5CB661004616FD /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F8342C5CB661004616FD /* ShoppingListViewController.swift */; };
 		84F6F8392C5CBCC9004616FD /* SignTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F8382C5CBCC9004616FD /* SignTextField.swift */; };
-		84F6F83D2C5CBE10004616FD /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F83C2C5CBE10004616FD /* Color.swift */; };
+		84F6F83D2C5CBE10004616FD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F83C2C5CBE10004616FD /* Constants.swift */; };
 		84F6F83F2C5CD20A004616FD /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F83E2C5CD20A004616FD /* PhoneViewController.swift */; };
 		84F6F8412C5CD21B004616FD /* SignUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F8402C5CD21B004616FD /* SignUpButton.swift */; };
 		84F6F8432C5CE12E004616FD /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F8422C5CE12E004616FD /* BirthdayViewController.swift */; };
 		84F6F8452C5E5085004616FD /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F8442C5E5085004616FD /* EmailViewController.swift */; };
 		84F6F8472C5E683D004616FD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F8462C5E683D004616FD /* SignInViewController.swift */; };
+		84F6F8492C5E9896004616FD /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F8482C5E9896004616FD /* NicknameViewController.swift */; };
+		84F6F84C2C5F5032004616FD /* ShoppingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F84B2C5F5032004616FD /* ShoppingListView.swift */; };
+		84F6F84E2C5F50D7004616FD /* ShoppingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F84D2C5F50D7004616FD /* ShoppingListTableViewCell.swift */; };
+		84F6F8502C5F577B004616FD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F84F2C5F577B004616FD /* DetailViewController.swift */; };
+		84F6F8522C5F6A02004616FD /* ShoppingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F8512C5F6A02004616FD /* ShoppingItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,12 +49,17 @@
 		84F6F8302C5CB52B004616FD /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		84F6F8342C5CB661004616FD /* ShoppingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
 		84F6F8382C5CBCC9004616FD /* SignTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignTextField.swift; sourceTree = "<group>"; };
-		84F6F83C2C5CBE10004616FD /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		84F6F83C2C5CBE10004616FD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		84F6F83E2C5CD20A004616FD /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		84F6F8402C5CD21B004616FD /* SignUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButton.swift; sourceTree = "<group>"; };
 		84F6F8422C5CE12E004616FD /* BirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewController.swift; sourceTree = "<group>"; };
 		84F6F8442C5E5085004616FD /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		84F6F8462C5E683D004616FD /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		84F6F8482C5E9896004616FD /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
+		84F6F84B2C5F5032004616FD /* ShoppingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListView.swift; sourceTree = "<group>"; };
+		84F6F84D2C5F50D7004616FD /* ShoppingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewCell.swift; sourceTree = "<group>"; };
+		84F6F84F2C5F577B004616FD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		84F6F8512C5F6A02004616FD /* ShoppingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +113,7 @@
 			children = (
 				84F6F80E2C5CB1F9004616FD /* Assets.xcassets */,
 				84F6F8102C5CB1F9004616FD /* LaunchScreen.storyboard */,
-				84F6F83C2C5CBE10004616FD /* Color.swift */,
+				84F6F83C2C5CBE10004616FD /* Constants.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -130,10 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				84F6F8462C5E683D004616FD /* SignInViewController.swift */,
-				84F6F8442C5E5085004616FD /* EmailViewController.swift */,
-				84F6F8302C5CB52B004616FD /* PasswordViewController.swift */,
-				84F6F83E2C5CD20A004616FD /* PhoneViewController.swift */,
-				84F6F8422C5CE12E004616FD /* BirthdayViewController.swift */,
+				84F6F84A2C5E989A004616FD /* SignUp */,
 			);
 			path = LogInFlow;
 			sourceTree = "<group>";
@@ -151,6 +158,10 @@
 			isa = PBXGroup;
 			children = (
 				84F6F8342C5CB661004616FD /* ShoppingListViewController.swift */,
+				84F6F84B2C5F5032004616FD /* ShoppingListView.swift */,
+				84F6F84D2C5F50D7004616FD /* ShoppingListTableViewCell.swift */,
+				84F6F84F2C5F577B004616FD /* DetailViewController.swift */,
+				84F6F8512C5F6A02004616FD /* ShoppingItem.swift */,
 			);
 			path = ShoppingList;
 			sourceTree = "<group>";
@@ -162,6 +173,18 @@
 				84F6F8402C5CD21B004616FD /* SignUpButton.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		84F6F84A2C5E989A004616FD /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				84F6F8442C5E5085004616FD /* EmailViewController.swift */,
+				84F6F8482C5E9896004616FD /* NicknameViewController.swift */,
+				84F6F8302C5CB52B004616FD /* PasswordViewController.swift */,
+				84F6F83E2C5CD20A004616FD /* PhoneViewController.swift */,
+				84F6F8422C5CE12E004616FD /* BirthdayViewController.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,14 +269,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F6F84C2C5F5032004616FD /* ShoppingListView.swift in Sources */,
 				84F6F8392C5CBCC9004616FD /* SignTextField.swift in Sources */,
+				84F6F8492C5E9896004616FD /* NicknameViewController.swift in Sources */,
 				84F6F82E2C5CB41F004616FD /* RxStartTabbarController.swift in Sources */,
 				84F6F8292C5CB38A004616FD /* RxBaseViewController.swift in Sources */,
-				84F6F83D2C5CBE10004616FD /* Color.swift in Sources */,
+				84F6F83D2C5CBE10004616FD /* Constants.swift in Sources */,
 				84F6F8312C5CB52B004616FD /* PasswordViewController.swift in Sources */,
 				84F6F8472C5E683D004616FD /* SignInViewController.swift in Sources */,
 				84F6F8432C5CE12E004616FD /* BirthdayViewController.swift in Sources */,
+				84F6F8502C5F577B004616FD /* DetailViewController.swift in Sources */,
 				84F6F8452C5E5085004616FD /* EmailViewController.swift in Sources */,
+				84F6F8522C5F6A02004616FD /* ShoppingItem.swift in Sources */,
+				84F6F84E2C5F50D7004616FD /* ShoppingListTableViewCell.swift in Sources */,
 				84F6F8352C5CB661004616FD /* ShoppingListViewController.swift in Sources */,
 				84F6F8062C5CB1F7004616FD /* AppDelegate.swift in Sources */,
 				84F6F82C2C5CB3D2004616FD /* RxStartNavigationController.swift in Sources */,
