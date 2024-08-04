@@ -22,7 +22,7 @@ class SignUpButton: UIButton {
         
         setTitle(title, for: .normal)
         setTitleColor(.white, for: .normal)
-        backgroundColor = Color.gray
+        backgroundColor = Color.blue
         layer.cornerRadius = 10
     }
     

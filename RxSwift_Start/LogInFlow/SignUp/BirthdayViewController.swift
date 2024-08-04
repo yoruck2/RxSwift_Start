@@ -20,7 +20,7 @@ class BirthdayViewController: RxBaseViewController {
         $0.maximumDate = Date()
     }
     let infoLabel = UILabel().then {
-        $0.text = "만 17세 이상만 가입 가능합니다."
+        $0.text = Phrase.invalidBirthday
     }
     let containerStackView = UIStackView().then {
         $0.axis = .horizontal
@@ -48,27 +48,27 @@ class BirthdayViewController: RxBaseViewController {
     override func bind() {
         
         // MARK: 구독을 나누는 방법 -
-//        // 구독자 ( infoLabelText 내용 바꾸기 )
-//        validation
-//            .map { $0 ? Phrase.validAge : Phrase.invalidAge }
-//            .bind(to: infoLabelText)
-//            .disposed(by: disposeBag)
-//
-//        // 구독자 ( 레이블에 반영하기 )
-//        infoLabelText
-//            .bind(to: infoLabel.rx.text)
-//            .disposed(by: disposeBag)
-//
-//        // 구독자 ( infoLabelText 색깔바꾸기 )
-//        validation
-//            .map { $0 ? Color.blue : Color.gray }
-//            .bind(to: infoLabel.rx.textColor)
-//            .disposed(by: disposeBag)
-//
-//        // 구독자 ( 버튼 활성화여부 반영하기 )
-//        validation
-//            .bind(to: nextButton.rx.isEnabled)
-//            .disposed(by: disposeBag)
+        //        // 구독자 ( infoLabelText 내용 바꾸기 )
+        //        validation
+        //            .map { $0 ? Phrase.validAge : Phrase.invalidAge }
+        //            .bind(to: infoLabelText)
+        //            .disposed(by: disposeBag)
+        //
+        //        // 구독자 ( 레이블에 반영하기 )
+        //        infoLabelText
+        //            .bind(to: infoLabel.rx.text)
+        //            .disposed(by: disposeBag)
+        //
+        //        // 구독자 ( infoLabelText 색깔바꾸기 )
+        //        validation
+        //            .map { $0 ? Color.blue : Color.gray }
+        //            .bind(to: infoLabel.rx.textColor)
+        //            .disposed(by: disposeBag)
+        //
+        //        // 구독자 ( 버튼 활성화여부 반영하기 )
+        //        validation
+        //            .bind(to: nextButton.rx.isEnabled)
+        //            .disposed(by: disposeBag)
         
         validation.bind(with: self) { owner, value in
             owner.nextButton.isEnabled = value
@@ -120,11 +120,12 @@ class BirthdayViewController: RxBaseViewController {
     
     func showAlert() {
         let alert = UIAlertController(title: "회원가입 완료",
-                                      message: "회원가입이 완료 되었습니다!\n환영합니다!",
+                                      message: Phrase.signUpComplete,
                                       preferredStyle: .alert)
         let ok = UIAlertAction(title: "로그인 하러 가기",
                                style: .default) { [weak self] _ in
-            self?.changeRootVC(SignInViewController())
+            //            (self?.tabBarController as! RxStartTabBarController).replaceViewController(at: 0, with: SignInViewController())
+            self?.changeRootVC(RxStartTabBarController())
         }
         alert.addAction(ok)
         self.present(alert, animated: true)
