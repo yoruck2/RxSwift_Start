@@ -5,4 +5,13 @@
 //  Created by dopamint on 8/4/24.
 //
 
-import Foundation
+import UIKit
+
+class DetailViewController: RxBaseViewController {
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+    }
+}
