@@ -10,9 +10,15 @@ import UIKit
 enum Color {
     static let blue: UIColor = .abledBlue
     static let gray: UIColor = .unabledGray
+    static let red: UIColor = .invalidRed
 }
 
 enum Phrase {
+    
+    static let onlyNumeric = "숫자만 입력해주세요"
+    static let minimumNumberCount = "10자 이상으로 입력해주세요"
+    static let validNumber = ""
+    
     static let validAge = "가입 가능한 나이입니다."
     static let invalidAge = "만 17세 이상만 가입 가능합니다."
     

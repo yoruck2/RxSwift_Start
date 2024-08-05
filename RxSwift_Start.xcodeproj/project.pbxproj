@@ -33,6 +33,10 @@
 		84F6F84E2C5F50D7004616FD /* ShoppingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F84D2C5F50D7004616FD /* ShoppingListTableViewCell.swift */; };
 		84F6F8502C5F577B004616FD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F84F2C5F577B004616FD /* DetailViewController.swift */; };
 		84F6F8522C5F6A02004616FD /* ShoppingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F8512C5F6A02004616FD /* ShoppingItem.swift */; };
+		84F6F85B2C6131B4004616FD /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F85A2C6131B4004616FD /* PhoneViewModel.swift */; };
+		84F6F85E2C6131D9004616FD /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F85D2C6131D9004616FD /* PasswordViewModel.swift */; };
+		84F6F8612C613206004616FD /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F8602C613206004616FD /* BirthdayViewModel.swift */; };
+		84F6F8652C6169E1004616FD /* EmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F8642C6169E0004616FD /* EmailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +64,10 @@
 		84F6F84D2C5F50D7004616FD /* ShoppingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewCell.swift; sourceTree = "<group>"; };
 		84F6F84F2C5F577B004616FD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		84F6F8512C5F6A02004616FD /* ShoppingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItem.swift; sourceTree = "<group>"; };
+		84F6F85A2C6131B4004616FD /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
+		84F6F85D2C6131D9004616FD /* PasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModel.swift; sourceTree = "<group>"; };
+		84F6F8602C613206004616FD /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
+		84F6F8642C6169E0004616FD /* EmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,13 +186,57 @@
 		84F6F84A2C5E989A004616FD /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				84F6F8442C5E5085004616FD /* EmailViewController.swift */,
-				84F6F8482C5E9896004616FD /* NicknameViewController.swift */,
-				84F6F8302C5CB52B004616FD /* PasswordViewController.swift */,
-				84F6F83E2C5CD20A004616FD /* PhoneViewController.swift */,
-				84F6F8422C5CE12E004616FD /* BirthdayViewController.swift */,
+				84F6F8632C6164DB004616FD /* Email */,
+				84F6F8622C6164D1004616FD /* Nickname */,
+				84F6F85C2C6131B7004616FD /* Password */,
+				84F6F8592C6131A1004616FD /* PhoneNumeber */,
+				84F6F85F2C6131DD004616FD /* BirthdayViewModel */,
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		84F6F8592C6131A1004616FD /* PhoneNumeber */ = {
+			isa = PBXGroup;
+			children = (
+				84F6F83E2C5CD20A004616FD /* PhoneViewController.swift */,
+				84F6F85A2C6131B4004616FD /* PhoneViewModel.swift */,
+			);
+			path = PhoneNumeber;
+			sourceTree = "<group>";
+		};
+		84F6F85C2C6131B7004616FD /* Password */ = {
+			isa = PBXGroup;
+			children = (
+				84F6F8302C5CB52B004616FD /* PasswordViewController.swift */,
+				84F6F85D2C6131D9004616FD /* PasswordViewModel.swift */,
+			);
+			path = Password;
+			sourceTree = "<group>";
+		};
+		84F6F85F2C6131DD004616FD /* BirthdayViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84F6F8422C5CE12E004616FD /* BirthdayViewController.swift */,
+				84F6F8602C613206004616FD /* BirthdayViewModel.swift */,
+			);
+			path = BirthdayViewModel;
+			sourceTree = "<group>";
+		};
+		84F6F8622C6164D1004616FD /* Nickname */ = {
+			isa = PBXGroup;
+			children = (
+				84F6F8482C5E9896004616FD /* NicknameViewController.swift */,
+			);
+			path = Nickname;
+			sourceTree = "<group>";
+		};
+		84F6F8632C6164DB004616FD /* Email */ = {
+			isa = PBXGroup;
+			children = (
+				84F6F8442C5E5085004616FD /* EmailViewController.swift */,
+				84F6F8642C6169E0004616FD /* EmailViewModel.swift */,
+			);
+			path = Email;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84F6F84C2C5F5032004616FD /* ShoppingListView.swift in Sources */,
+				84F6F85E2C6131D9004616FD /* PasswordViewModel.swift in Sources */,
 				84F6F8392C5CBCC9004616FD /* SignTextField.swift in Sources */,
 				84F6F8492C5E9896004616FD /* NicknameViewController.swift in Sources */,
 				84F6F82E2C5CB41F004616FD /* RxStartTabbarController.swift in Sources */,
@@ -282,10 +335,13 @@
 				84F6F8452C5E5085004616FD /* EmailViewController.swift in Sources */,
 				84F6F8522C5F6A02004616FD /* ShoppingItem.swift in Sources */,
 				84F6F84E2C5F50D7004616FD /* ShoppingListTableViewCell.swift in Sources */,
+				84F6F8652C6169E1004616FD /* EmailViewModel.swift in Sources */,
 				84F6F8352C5CB661004616FD /* ShoppingListViewController.swift in Sources */,
 				84F6F8062C5CB1F7004616FD /* AppDelegate.swift in Sources */,
 				84F6F82C2C5CB3D2004616FD /* RxStartNavigationController.swift in Sources */,
+				84F6F8612C613206004616FD /* BirthdayViewModel.swift in Sources */,
 				84F6F83F2C5CD20A004616FD /* PhoneViewController.swift in Sources */,
+				84F6F85B2C6131B4004616FD /* PhoneViewModel.swift in Sources */,
 				84F6F8082C5CB1F7004616FD /* SceneDelegate.swift in Sources */,
 				84F6F8412C5CD21B004616FD /* SignUpButton.swift in Sources */,
 			);
