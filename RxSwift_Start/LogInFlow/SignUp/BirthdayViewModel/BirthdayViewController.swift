@@ -11,7 +11,9 @@ import Then
 import RxSwift
 import RxCocoa
 
-class BirthdayViewController: RxBaseViewController {
+final class BirthdayViewController: RxBaseViewController {
+    
+    let viewModel = BirthdayViewModel()
     
     let birthDayPicker = UIDatePicker().then {
         $0.datePickerMode = .date
@@ -33,17 +35,6 @@ class BirthdayViewController: RxBaseViewController {
     let dayLabel = UILabel()
     
     let nextButton = SignUpButton(title: "가입하기")
-    
-    var validation = BehaviorRelay(value: false)
-    let infoLabelText = PublishSubject<String>()
-    let year = BehaviorRelay(value: 2024)
-    let month = BehaviorRelay(value: 8)
-    let day = BehaviorRelay(value: 1)
-    let ageLimitForDay = 6210 // 만 17살이 살아온 일수
-    
-    func livedDays(from date: Date) -> Int {
-        return Calendar.current.dateComponents([.day], from: date, to: Date()).day ?? 0
-    }
     
     override func bind() {
         
@@ -70,48 +61,31 @@ class BirthdayViewController: RxBaseViewController {
         //            .bind(to: nextButton.rx.isEnabled)
         //            .disposed(by: disposeBag)
         
-        validation.bind(with: self) { owner, value in
+        let input = BirthdayViewModel.Input(birthday: birthDayPicker.rx.date,
+                                            tap: nextButton.rx.tap)
+        let output = viewModel.transform(input: input)
+        
+        output.validation.bind(with: self) { owner, value in
             owner.nextButton.isEnabled = value
             owner.infoLabel.text = value ? Phrase.validAge : Phrase.invalidAge
             owner.infoLabel.textColor = value ? Color.blue : Color.gray
         }
         .disposed(by: disposeBag)
         
-        birthDayPicker.rx.date
-            .bind(with: self) { owner, date in
-                
-                let component = Calendar.current.dateComponents(
-                    [.day, .month, .year], from: date)
-                
-                if let year = component.year,
-                   let month = component.month,
-                   let day = component.day {
-                    owner.year.accept(year)
-                    owner.month.accept(month)
-                    owner.day.accept(day)
-                }
-                
-                let isValid = owner.livedDays(from: date) >= owner.ageLimitForDay
-                owner.validation.accept(isValid)
-            }
-            .disposed(by: disposeBag)
-        
-        year
+        output.year
             .map { "\($0)년" }
             .bind(to: yearLabel.rx.text)
+            .disposed(by: disposeBag)        
+        output.month
+            .map { "\($0)월" }
+            .bind(to: monthLabel.rx.text)
+            .disposed(by: disposeBag)
+        output.day
+            .map { "\($0)일" }
+            .bind(to: dayLabel.rx.text)
             .disposed(by: disposeBag)
         
-        month.bind(with: self) { owner, value in
-            owner.monthLabel.text = "\(value)월"
-        }
-        .disposed(by: disposeBag)
-        
-        day.bind(with: self) { owner, value in
-            owner.dayLabel.text = "\(value)일"
-        }
-        .disposed(by: disposeBag)
-        
-        nextButton.rx.tap
+        output.tap
             .bind(with: self) { owner, _ in
                 owner.showAlert()
             }

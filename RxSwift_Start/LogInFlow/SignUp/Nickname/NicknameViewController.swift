@@ -10,13 +10,11 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-class NicknameViewController: RxBaseViewController {
+final class NicknameViewController: RxBaseViewController {
     
     let nicknameTextField = SignTextField(placeholderText: "닉네임을 입력해주세요 :)")
     let nextButton = SignUpButton(title: "다음")
     let descriptionLabel = UILabel()
-    
-    
     
     override func configureHierarchy() {
         view.addSubview(nicknameTextField)

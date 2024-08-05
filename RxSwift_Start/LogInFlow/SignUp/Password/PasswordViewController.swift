@@ -10,36 +10,38 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-class PasswordViewController: RxBaseViewController {
+final class PasswordViewController: RxBaseViewController {
+    
+    let viewModel = PasswordViewModel()
     
     let passwordTextField = SignTextField(placeholderText: "비밀번호를 입력해주세요 :)")
     let nextButton = SignUpButton(title: "다음")
     let descriptionLabel = UILabel()
     
     override func bind() {
-            
-        let validation = passwordTextField.rx.text
-            .orEmpty
-            .map { text -> (Bool, String) in
-                if text.contains(" ") {
-                    return (false, "공백은 안됩니다!!")
-                } else if text.count < 8 {
-                    return (false, "8자 이상 입력해주세요!!")
-                } else {
-                    return (true, "")
-                }
-            }
         
-        validation
-            .bind(with: self) { owner, result in
-                let (isValid, message) = result
+        let input = PasswordViewModel.Input(password: passwordTextField.rx.text.orEmpty,
+                                            tap: nextButton.rx.tap)
+        
+        let output = viewModel.transform(input: input)
+        
+        output.validationResult
+            .bind(with: self) { owner, value in
+                let (isValid, message) = value
                 owner.nextButton.isEnabled = isValid
                 owner.descriptionLabel.text = message
             }
             .disposed(by: disposeBag)
         
+        output.tap
+            .bind(with: self) { owner, _ in
+                owner.navigationController?
+                    .pushViewController(PhoneViewController(), animated: true)
+            }
+            .disposed(by: disposeBag)
+        
         // 공백 아예 입력 안되게 하는 방법
-//        let validation = passwordTextField.rx.text
+        //        let validation = passwordTextField.rx.text
 //            .orEmpty
 //            .map {
 //                if $0.contains(" ") {
@@ -54,14 +56,6 @@ class PasswordViewController: RxBaseViewController {
 //                owner.descriptionLabel.text = value ? "" : "8자 이상 입력해주세요"
 //            }
 //            .disposed(by: disposeBag)
-        
-        nextButton.rx.tap
-            .bind(with: self) { owner, _ in
-                owner.navigationController?
-                    .pushViewController(PhoneViewController(), animated: true)
-            }
-            .disposed(by: disposeBag)
-        
     }
     
     override func configureHierarchy() {
