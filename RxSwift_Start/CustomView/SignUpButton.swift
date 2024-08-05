@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpButton: UIButton {
+final class SignUpButton: UIButton {
     
     override var isEnabled: Bool {
         

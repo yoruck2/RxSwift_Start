@@ -2,7 +2,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ShoppingListViewController: RxBaseViewController {
+final class ShoppingListViewController: RxBaseViewController {
     
     let searchBar = UISearchBar()
     let inputText = BehaviorRelay(value: "")

@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class ShoppingListView: UIView {
+final class ShoppingListView: UIView {
     
     let shoppingTextField = UITextField().then {
         $0.placeholder = "구매할 상품을 작성해주세요!"
