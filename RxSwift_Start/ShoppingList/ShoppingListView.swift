@@ -11,6 +11,8 @@ import Then
 
 final class ShoppingListView: UIView {
     
+    let searchBar = UISearchBar()
+    
     let shoppingTextField = UITextField().then {
         $0.placeholder = "구매할 상품을 작성해주세요!"
         $0.backgroundColor = #colorLiteral(red: 0.8980386853, green: 0.898039639, blue: 0.9195435643, alpha: 1)
@@ -34,6 +36,7 @@ final class ShoppingListView: UIView {
         $0.tintColor = .black
     }
     let tableView = UITableView().then {
+        $0.register(ShoppingListTableViewCell.self, forCellReuseIdentifier: "ShoppingListTableViewCell")
         $0.separatorStyle = .none
         $0.rowHeight = 60
     }
