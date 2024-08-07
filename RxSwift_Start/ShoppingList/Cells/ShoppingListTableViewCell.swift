@@ -11,6 +11,7 @@ import RxSwift
 
 class ShoppingListTableViewCell: UITableViewCell {
     
+    static let id = "ShoppingListTableViewCell"
     
     var disposeBag = DisposeBag()
     

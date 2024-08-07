@@ -35,6 +35,22 @@ final class ShoppingListView: UIView {
         $0.backgroundColor = #colorLiteral(red: 0.5960784314, green: 0.5960784314, blue: 0.6156862745, alpha: 1)
         $0.tintColor = .black
     }
+    
+    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.collectionViewLayout).then {
+        $0.register(ShoppingListCollectionViewCell.self, forCellWithReuseIdentifier: ShoppingListCollectionViewCell.id)
+    }
+    
+    private var collectionViewLayout: UICollectionViewLayout {
+        let layout = UICollectionViewFlowLayout()
+        layout.collectionView?.backgroundColor = .green
+        layout.estimatedItemSize =  CGSize(width: 100, height: 50)
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        layout.scrollDirection = .horizontal
+        return layout
+    }
+    
     let tableView = UITableView().then {
         $0.register(ShoppingListTableViewCell.self, forCellReuseIdentifier: "ShoppingListTableViewCell")
         $0.separatorStyle = .none
@@ -50,6 +66,7 @@ final class ShoppingListView: UIView {
     func configureHierarchy() {
         addSubview(shoppingTextField)
         addSubview(addButton)
+        addSubview(collectionView)
         addSubview(tableView)
     }
     func configureLayout() {
@@ -62,10 +79,15 @@ final class ShoppingListView: UIView {
             make.trailing.equalTo(shoppingTextField).inset(10)
             make.height.width.equalTo(50)
         }
+        collectionView.snp.makeConstraints { make in
+            make.horizontalEdges.equalToSuperview()
+            make.top.equalTo(shoppingTextField.snp.bottom)
+            make.height.equalTo(100)
+        }
         tableView.snp.makeConstraints { make in
             make.horizontalEdges.equalTo(safeAreaLayoutGuide).inset(10)
             make.bottom.equalTo(safeAreaLayoutGuide)
-            make.top.equalTo(shoppingTextField.snp.bottom).offset(10)
+            make.top.equalTo(collectionView.snp.bottom)
         }
     }
     @available(*, unavailable)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8432B73A2C6399A60021225A /* ShoppingListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432B7392C6399A60021225A /* ShoppingListCollectionViewCell.swift */; };
 		84F6F8062C5CB1F7004616FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F8052C5CB1F7004616FD /* AppDelegate.swift */; };
 		84F6F8082C5CB1F7004616FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F8072C5CB1F7004616FD /* SceneDelegate.swift */; };
 		84F6F80F2C5CB1F9004616FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F6F80E2C5CB1F9004616FD /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8432B7392C6399A60021225A /* ShoppingListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListCollectionViewCell.swift; sourceTree = "<group>"; };
 		84F6F8022C5CB1F7004616FD /* RxSwift_Start.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwift_Start.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F6F8052C5CB1F7004616FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84F6F8072C5CB1F7004616FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8432B7382C63998F0021225A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84F6F84D2C5F50D7004616FD /* ShoppingListTableViewCell.swift */,
+				8432B7392C6399A60021225A /* ShoppingListCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		84F6F7F92C5CB1F7004616FD = {
 			isa = PBXGroup;
 			children = (
@@ -170,7 +181,7 @@
 				84F6F8342C5CB661004616FD /* ShoppingListViewController.swift */,
 				84F6F8662C617229004616FD /* ShoppingListViewModel.swift */,
 				84F6F84B2C5F5032004616FD /* ShoppingListView.swift */,
-				84F6F84D2C5F50D7004616FD /* ShoppingListTableViewCell.swift */,
+				8432B7382C63998F0021225A /* Cells */,
 				84F6F84F2C5F577B004616FD /* DetailViewController.swift */,
 				84F6F8512C5F6A02004616FD /* ShoppingItem.swift */,
 			);
@@ -345,6 +356,7 @@
 				84F6F8612C613206004616FD /* BirthdayViewModel.swift in Sources */,
 				84F6F83F2C5CD20A004616FD /* PhoneViewController.swift in Sources */,
 				84F6F85B2C6131B4004616FD /* PhoneViewModel.swift in Sources */,
+				8432B73A2C6399A60021225A /* ShoppingListCollectionViewCell.swift in Sources */,
 				84F6F8082C5CB1F7004616FD /* SceneDelegate.swift in Sources */,
 				84F6F8672C617229004616FD /* ShoppingListViewModel.swift in Sources */,
 				84F6F8412C5CD21B004616FD /* SignUpButton.swift in Sources */,

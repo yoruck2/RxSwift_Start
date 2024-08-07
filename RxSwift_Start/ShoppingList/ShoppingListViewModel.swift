@@ -17,8 +17,10 @@ class ShoppingListViewModel {
         ShoppingItem(name: "과제하기", isDone: false, isFavorite: false)
     ]
     
+    let recommendationData = ["맥북 프로", "참쌀 선과", "고래밥", "아이폰 15프로", "아이패드 프로", "1", "2", "3", "4"]
+    
     lazy var shoppingList = BehaviorRelay<[ShoppingItem]>(value: data)
-//    lazy var filteredList = BehaviorRelay<[ShoppingItem]>(value: initialData)
+    lazy var recommendationList = BehaviorRelay<[String]>(value: recommendationData)
     
     let disposeBag = DisposeBag()
     
@@ -26,6 +28,8 @@ class ShoppingListViewModel {
         
         let itemSelected: ControlEvent<ShoppingItem>
         let itemDeleted: ControlEvent<ShoppingItem>
+        
+        let recommendationSelected: ControlEvent<String>
         
         let toggledDoneIndex: PublishRelay<Int>
         let toggledFavoriteIndex: PublishRelay<Int>
@@ -37,13 +41,17 @@ class ShoppingListViewModel {
     
     struct Output {
         let shoppingList: BehaviorRelay<[ShoppingItem]>
+        let recommendationList: BehaviorRelay<[String]>
+        
         let itemSelected: ControlEvent<ShoppingItem>
+//        let recommendationSelected: ControlEvent<String>
         let addButtonTap: ControlEvent<Void>
     }
     
     func transform(input: Input) -> Output {
-       
         
+        selectRecommendation(input.recommendationSelected)
+       
         searchItem(input.searchText)
         addItem(input.addItemText, on: input.addButtonTap)
         deleteItem(input.itemDeleted)
@@ -51,18 +59,28 @@ class ShoppingListViewModel {
         toggleDone(at: input.toggledDoneIndex)
         toggleFavorite(at: input.toggledFavoriteIndex)
         
-        return Output(shoppingList: shoppingList,
+        return Output(shoppingList: shoppingList, 
+                      recommendationList: recommendationList,
                       itemSelected: input.itemSelected,
                       addButtonTap: input.addButtonTap)
     }
+    
+    private func selectRecommendation(_ text: ControlEvent<String>) {
+        text
+            .bind(with: self) { owner, text in
+                owner.data.insert(ShoppingItem(name: text), at: 0)
+                owner.shoppingList.accept(owner.data)
+            }
+            .disposed(by: disposeBag)
+    }
+    
     private func searchItem(_ text: ControlProperty<String?>) {
         text.orEmpty
             .map { $0.lowercased() }
             .debounce(.milliseconds(100), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .bind(with: self) { owner, text in
-//                var data = owner.data
-//                let list = owner.shoppingList.value
+
                 let filteredList = text.isEmpty ? owner.data : owner.data.filter { $0.name.lowercased().contains(text) }
                 owner.shoppingList.accept(filteredList)
             }
@@ -78,7 +96,6 @@ class ShoppingListViewModel {
                 
                 owner.data.insert(ShoppingItem(name: text), at: 0)
                 owner.shoppingList.accept(owner.data)
-//                owner.filteredList.accept(owner.list.value)
             }
             .disposed(by: disposeBag)
     }
@@ -87,12 +104,9 @@ class ShoppingListViewModel {
         item
             .bind(with: self) { owner, item in
                 var items = owner.shoppingList.value
-//                let filteredItems = owner.shoppingList.value
-//
                 if let originalIndex = items.firstIndex(where: { $0.id == item.id }) {
                     items.remove(at: originalIndex)
                     owner.shoppingList.accept(items)
-//                    owner.filteredList.accept(owner.list.value)
                 }
             }
             .disposed(by: disposeBag)
@@ -100,12 +114,7 @@ class ShoppingListViewModel {
 }
 
 extension ShoppingListViewModel {
-//    
-//    private func updateFilteredList() {
-//        let filtered = text.isEmpty ? list.value : list.value.filter { $0.name.lowercased().contains(text) }
-//        owner.filteredList.accept(filtered)
-//    }
-    
+
     private func toggleDone(at index: PublishRelay<Int>) {
         index.bind(with: self) { owner, index in
             var list = owner.shoppingList.value
@@ -116,7 +125,6 @@ extension ShoppingListViewModel {
                 owner.data[originalIndex].isDone.toggle()
                 list[originalIndex].isDone.toggle()
                 owner.shoppingList.accept(list)
-                //                owner.filteredList.accept(owner.list.value)
             }
         }
         .disposed(by: disposeBag)
@@ -132,7 +140,6 @@ extension ShoppingListViewModel {
                 owner.data[originalIndex].isFavorite.toggle()
                 list[originalIndex].isFavorite.toggle()
                 owner.shoppingList.accept(list)
-                //                owner.filteredList.accept(owner.list.value)
             }
         }
         .disposed(by: disposeBag)
