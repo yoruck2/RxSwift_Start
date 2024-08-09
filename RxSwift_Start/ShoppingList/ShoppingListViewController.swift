@@ -6,7 +6,7 @@ final class ShoppingListViewController: RxBaseViewController {
     
     let viewModel = ShoppingListViewModel()
     let rootView = ShoppingListView()
-
+    
     override func loadView() {
         view = rootView
     }
@@ -22,31 +22,33 @@ final class ShoppingListViewController: RxBaseViewController {
     }
     
     override func bind() {
-        
+    
         let toggledDoneIndex = PublishRelay<Int>()
         let toggledFavoriteIndex = PublishRelay<Int>()
+//        let endEvent = PublishRelay<Void>()
         
         let input = ShoppingListViewModel.Input(itemSelected: rootView.tableView.rx.modelSelected(ShoppingItem.self),
-                                                itemDeleted: rootView.tableView.rx.modelDeleted(ShoppingItem.self), 
+                                                itemDeleted: rootView.tableView.rx.modelDeleted(ShoppingItem.self),
                                                 recommendationSelected: rootView.collectionView.rx.modelSelected(String.self),
                                                 toggledDoneIndex: toggledDoneIndex,
                                                 toggledFavoriteIndex: toggledFavoriteIndex,
-                                                searchText: rootView.searchBar.rx.text, 
+                                                searchText: rootView.searchBar.rx.text,
                                                 addItemText: rootView.shoppingTextField.rx.text,
-                                                addButtonTap: rootView.addButton.rx.tap)
+                                                addButtonTap: rootView.addButton.rx.tap
+                                                /*endEvent: endEvent*/)
         let output = viewModel.transform(input: input)
         
         // 테이블 뷰
         output.shoppingList
-            .bind(to: rootView.tableView.rx.items(cellIdentifier: ShoppingListTableViewCell.id, 
-                                                  cellType: ShoppingListTableViewCell.self)) 
+            .bind(to: rootView.tableView.rx.items(cellIdentifier: ShoppingListTableViewCell.id,
+                                                  cellType: ShoppingListTableViewCell.self))
         { row, element, cell in
-                cell.configure(with: element)
-                
-                cell.doneButton.rx.tap
-                    .map { row }
-                    .bind(to: toggledDoneIndex)
-                    .disposed(by: cell.disposeBag)
+            cell.configure(with: element)
+            
+            cell.doneButton.rx.tap
+                .map { row }
+                .bind(to: toggledDoneIndex)
+                .disposed(by: cell.disposeBag)
             
             cell.favoriteButton.rx.tap
                 .map { row }
@@ -56,7 +58,7 @@ final class ShoppingListViewController: RxBaseViewController {
         .disposed(by: disposeBag)
         // 컬렉션 뷰
         output.recommendationList
-            .bind(to: rootView.collectionView.rx.items(cellIdentifier: ShoppingListCollectionViewCell.id, 
+            .bind(to: rootView.collectionView.rx.items(cellIdentifier: ShoppingListCollectionViewCell.id,
                                                        cellType: ShoppingListCollectionViewCell.self))
         { item, element, cell in
             cell.label.text = element
@@ -65,20 +67,26 @@ final class ShoppingListViewController: RxBaseViewController {
         
         output.itemSelected
             .bind(with: self) { owner, item in
-                let nextVC = DetailViewController()
-                nextVC.item = item
-                nextVC.textField.text = item.name
-                //                nextVC.itemUpdateHandler = { updatedItem in
-                //                    owner.updateItem(updatedItem)
-                //                }
                 owner.navigationController?
-                    .pushViewController(nextVC, animated: true)
+                    .pushViewController(item, animated: true)
             }
             .disposed(by: disposeBag)
         
-        output.addButtonTap
-            .map { "" }
-            .bind(to: rootView.shoppingTextField.rx.text)
-            .disposed(by: disposeBag)
+        output.addButtonTap.bind(with: self) { owner, _ in
+            owner.rootView.shoppingTextField.text = ""
+            owner.rootView.shoppingTextField.sendActions(for: .valueChanged)
+        }.disposed(by: disposeBag)
+        
+//        output.addButtonTap
+//            .map { "" }
+//            .bind(to: rootView.shoppingTextField.rx.text)
+//            .disposed(by: disposeBag)
+        
+//        output.addButtonTap
+//            .bind { _ in
+//                endEvent.accept(())
+//            }
+//            .disposed(by: disposeBag)
     }
 }
+
