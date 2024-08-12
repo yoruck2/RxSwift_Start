@@ -20,9 +20,9 @@ final class RxStartTabBarController: UITabBarController {
         let boxOfficeVC = RxStartNavigationController(
             rootViewController: BoxOfficeViewContoller())
         let jokeVC = RxStartNavigationController(
-            rootViewController: ShoppingListViewController())
+            rootViewController: JokeViewController())
 
-        setViewControllers([signUpVC, shoppingListVC], animated: true)
+        setViewControllers([signUpVC, shoppingListVC, boxOfficeVC, jokeVC], animated: true)
         
         if let items = tabBar.items {
             items[0].image = UIImage(systemName: "pencil.line")
