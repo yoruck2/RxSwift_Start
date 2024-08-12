@@ -16,6 +16,10 @@ final class RxStartTabBarController: UITabBarController {
             rootViewController: SignInViewController())
         
         let shoppingListVC = RxStartNavigationController(
+            rootViewController: ShoppingListViewController())  
+        let boxOfficeVC = RxStartNavigationController(
+            rootViewController: BoxOfficeViewContoller())
+        let jokeVC = RxStartNavigationController(
             rootViewController: ShoppingListViewController())
 
         setViewControllers([signUpVC, shoppingListVC], animated: true)
@@ -25,6 +29,10 @@ final class RxStartTabBarController: UITabBarController {
             items[0].title = "LogIn"
             items[1].image = UIImage(systemName: "bag.fill")
             items[1].title = "Shopping List"
+            items[2].image = UIImage(systemName: "movieclapper")
+            items[2].title = "Box Office"
+            items[3].image = UIImage(systemName: "theatermasks")
+            items[3].title = "Joke"
         }
     }
 }

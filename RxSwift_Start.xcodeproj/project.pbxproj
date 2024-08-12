@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		8432B73A2C6399A60021225A /* ShoppingListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432B7392C6399A60021225A /* ShoppingListCollectionViewCell.swift */; };
+		848EBDF42C69EF8900F6C242 /* BoxOfficeViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848EBDEF2C69EF8900F6C242 /* BoxOfficeViewContoller.swift */; };
+		848EBDF52C69EF8900F6C242 /* BoxOfficeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848EBDF02C69EF8900F6C242 /* BoxOfficeViewModel.swift */; };
+		848EBDF62C69EF8900F6C242 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848EBDF12C69EF8900F6C242 /* MovieCollectionViewCell.swift */; };
+		848EBDF72C69EF8900F6C242 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848EBDF22C69EF8900F6C242 /* MovieTableViewCell.swift */; };
+		848EBDFD2C69F0F300F6C242 /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848EBDF82C69F0F300F6C242 /* Joke.swift */; };
+		848EBDFE2C69F0F300F6C242 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848EBDF92C69F0F300F6C242 /* Movie.swift */; };
+		848EBDFF2C69F0F300F6C242 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848EBDFB2C69F0F300F6C242 /* NetworkManager.swift */; };
+		848EBE012C69F12300F6C242 /* JokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848EBE002C69F12300F6C242 /* JokeViewController.swift */; };
+		848EBE042C69F19F00F6C242 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 848EBE032C69F19F00F6C242 /* Alamofire */; };
+		848EBE062C69F20500F6C242 /* APIKEY.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848EBE052C69F20500F6C242 /* APIKEY.swift */; };
+		848EBE092C69F2BC00F6C242 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848EBE082C69F2BC00F6C242 /* BaseViewModel.swift */; };
+		848EBE0B2C69FC8F00F6C242 /* JokeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848EBE0A2C69FC8F00F6C242 /* JokeViewModel.swift */; };
 		84F6F8062C5CB1F7004616FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F8052C5CB1F7004616FD /* AppDelegate.swift */; };
 		84F6F8082C5CB1F7004616FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6F8072C5CB1F7004616FD /* SceneDelegate.swift */; };
 		84F6F80F2C5CB1F9004616FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F6F80E2C5CB1F9004616FD /* Assets.xcassets */; };
@@ -43,6 +55,17 @@
 
 /* Begin PBXFileReference section */
 		8432B7392C6399A60021225A /* ShoppingListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListCollectionViewCell.swift; sourceTree = "<group>"; };
+		848EBDEF2C69EF8900F6C242 /* BoxOfficeViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxOfficeViewContoller.swift; sourceTree = "<group>"; };
+		848EBDF02C69EF8900F6C242 /* BoxOfficeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxOfficeViewModel.swift; sourceTree = "<group>"; };
+		848EBDF12C69EF8900F6C242 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		848EBDF22C69EF8900F6C242 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		848EBDF82C69F0F300F6C242 /* Joke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
+		848EBDF92C69F0F300F6C242 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		848EBDFB2C69F0F300F6C242 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		848EBE002C69F12300F6C242 /* JokeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeViewController.swift; sourceTree = "<group>"; };
+		848EBE052C69F20500F6C242 /* APIKEY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKEY.swift; sourceTree = "<group>"; };
+		848EBE082C69F2BC00F6C242 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		848EBE0A2C69FC8F00F6C242 /* JokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeViewModel.swift; sourceTree = "<group>"; };
 		84F6F8022C5CB1F7004616FD /* RxSwift_Start.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwift_Start.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F6F8052C5CB1F7004616FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84F6F8072C5CB1F7004616FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848EBE042C69F19F00F6C242 /* Alamofire in Frameworks */,
 				84F6F8242C5CB33C004616FD /* RxCocoa in Frameworks */,
 				84F6F81B2C5CB273004616FD /* SnapKit in Frameworks */,
 				84F6F8262C5CB33C004616FD /* RxSwift in Frameworks */,
@@ -96,6 +120,53 @@
 				8432B7392C6399A60021225A /* ShoppingListCollectionViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		848EBDEE2C69EE6700F6C242 /* RandomJoke */ = {
+			isa = PBXGroup;
+			children = (
+				848EBE002C69F12300F6C242 /* JokeViewController.swift */,
+				848EBE0A2C69FC8F00F6C242 /* JokeViewModel.swift */,
+			);
+			path = RandomJoke;
+			sourceTree = "<group>";
+		};
+		848EBDF32C69EF8900F6C242 /* Boxoffice */ = {
+			isa = PBXGroup;
+			children = (
+				848EBDEF2C69EF8900F6C242 /* BoxOfficeViewContoller.swift */,
+				848EBDF02C69EF8900F6C242 /* BoxOfficeViewModel.swift */,
+				848EBDF12C69EF8900F6C242 /* MovieCollectionViewCell.swift */,
+				848EBDF22C69EF8900F6C242 /* MovieTableViewCell.swift */,
+			);
+			path = Boxoffice;
+			sourceTree = "<group>";
+		};
+		848EBDFA2C69F0F300F6C242 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				848EBDF82C69F0F300F6C242 /* Joke.swift */,
+				848EBDF92C69F0F300F6C242 /* Movie.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		848EBDFC2C69F0F300F6C242 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				848EBDFA2C69F0F300F6C242 /* Model */,
+				848EBDFB2C69F0F300F6C242 /* NetworkManager.swift */,
+				848EBE052C69F20500F6C242 /* APIKEY.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		848EBE072C69F2B100F6C242 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				848EBE082C69F2BC00F6C242 /* BaseViewModel.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		84F6F7F92C5CB1F7004616FD = {
@@ -119,10 +190,13 @@
 			isa = PBXGroup;
 			children = (
 				84F6F8322C5CB59D004616FD /* App */,
-				84F6F82A2C5CB39E004616FD /* ContainerView */,
+				848EBE072C69F2B100F6C242 /* Common */,
 				84F6F8362C5CBC94004616FD /* CustomView */,
 				84F6F82F2C5CB4B3004616FD /* LogInFlow */,
 				84F6F8332C5CB61B004616FD /* ShoppingList */,
+				848EBDF32C69EF8900F6C242 /* Boxoffice */,
+				848EBDEE2C69EE6700F6C242 /* RandomJoke */,
+				848EBDFC2C69F0F300F6C242 /* Network */,
 				84F6F81E2C5CB305004616FD /* Resource */,
 				84F6F8132C5CB1F9004616FD /* Info.plist */,
 			);
@@ -150,7 +224,6 @@
 		84F6F82A2C5CB39E004616FD /* ContainerView */ = {
 			isa = PBXGroup;
 			children = (
-				84F6F8272C5CB379004616FD /* BaseView */,
 				84F6F82B2C5CB3D2004616FD /* RxStartNavigationController.swift */,
 				84F6F82D2C5CB41F004616FD /* RxStartTabbarController.swift */,
 			);
@@ -191,6 +264,8 @@
 		84F6F8362C5CBC94004616FD /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				84F6F82A2C5CB39E004616FD /* ContainerView */,
+				84F6F8272C5CB379004616FD /* BaseView */,
 				84F6F8382C5CBCC9004616FD /* SignTextField.swift */,
 				84F6F8402C5CD21B004616FD /* SignUpButton.swift */,
 			);
@@ -274,6 +349,7 @@
 				84F6F8202C5CB320004616FD /* Then */,
 				84F6F8232C5CB33C004616FD /* RxCocoa */,
 				84F6F8252C5CB33C004616FD /* RxSwift */,
+				848EBE032C69F19F00F6C242 /* Alamofire */,
 			);
 			productName = RxSwift_Start;
 			productReference = 84F6F8022C5CB1F7004616FD /* RxSwift_Start.app */;
@@ -307,6 +383,7 @@
 				84F6F8192C5CB273004616FD /* XCRemoteSwiftPackageReference "SnapKit" */,
 				84F6F81F2C5CB320004616FD /* XCRemoteSwiftPackageReference "Then" */,
 				84F6F8222C5CB33C004616FD /* XCRemoteSwiftPackageReference "RxSwift" */,
+				848EBE022C69F19F00F6C242 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 84F6F8032C5CB1F7004616FD /* Products */;
 			projectDirPath = "";
@@ -340,23 +417,34 @@
 				84F6F8392C5CBCC9004616FD /* SignTextField.swift in Sources */,
 				84F6F8492C5E9896004616FD /* NicknameViewController.swift in Sources */,
 				84F6F82E2C5CB41F004616FD /* RxStartTabbarController.swift in Sources */,
+				848EBDF42C69EF8900F6C242 /* BoxOfficeViewContoller.swift in Sources */,
 				84F6F8292C5CB38A004616FD /* RxBaseViewController.swift in Sources */,
 				84F6F83D2C5CBE10004616FD /* Constants.swift in Sources */,
+				848EBE012C69F12300F6C242 /* JokeViewController.swift in Sources */,
 				84F6F8312C5CB52B004616FD /* PasswordViewController.swift in Sources */,
 				84F6F8472C5E683D004616FD /* SignInViewController.swift in Sources */,
 				84F6F8432C5CE12E004616FD /* BirthdayViewController.swift in Sources */,
+				848EBDF62C69EF8900F6C242 /* MovieCollectionViewCell.swift in Sources */,
 				84F6F8502C5F577B004616FD /* DetailViewController.swift in Sources */,
 				84F6F8452C5E5085004616FD /* EmailViewController.swift in Sources */,
 				84F6F8522C5F6A02004616FD /* ShoppingItem.swift in Sources */,
 				84F6F84E2C5F50D7004616FD /* ShoppingListTableViewCell.swift in Sources */,
 				84F6F8652C6169E1004616FD /* EmailViewModel.swift in Sources */,
 				84F6F8352C5CB661004616FD /* ShoppingListViewController.swift in Sources */,
+				848EBE0B2C69FC8F00F6C242 /* JokeViewModel.swift in Sources */,
 				84F6F8062C5CB1F7004616FD /* AppDelegate.swift in Sources */,
+				848EBDFE2C69F0F300F6C242 /* Movie.swift in Sources */,
+				848EBDFF2C69F0F300F6C242 /* NetworkManager.swift in Sources */,
+				848EBDF72C69EF8900F6C242 /* MovieTableViewCell.swift in Sources */,
 				84F6F82C2C5CB3D2004616FD /* RxStartNavigationController.swift in Sources */,
+				848EBE062C69F20500F6C242 /* APIKEY.swift in Sources */,
 				84F6F8612C613206004616FD /* BirthdayViewModel.swift in Sources */,
 				84F6F83F2C5CD20A004616FD /* PhoneViewController.swift in Sources */,
+				848EBDF52C69EF8900F6C242 /* BoxOfficeViewModel.swift in Sources */,
 				84F6F85B2C6131B4004616FD /* PhoneViewModel.swift in Sources */,
 				8432B73A2C6399A60021225A /* ShoppingListCollectionViewCell.swift in Sources */,
+				848EBDFD2C69F0F300F6C242 /* Joke.swift in Sources */,
+				848EBE092C69F2BC00F6C242 /* BaseViewModel.swift in Sources */,
 				84F6F8082C5CB1F7004616FD /* SceneDelegate.swift in Sources */,
 				84F6F8672C617229004616FD /* ShoppingListViewModel.swift in Sources */,
 				84F6F8412C5CD21B004616FD /* SignUpButton.swift in Sources */,
@@ -584,6 +672,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		848EBE022C69F19F00F6C242 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 		84F6F8192C5CB273004616FD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -611,6 +707,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		848EBE032C69F19F00F6C242 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 848EBE022C69F19F00F6C242 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		84F6F81A2C5CB273004616FD /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 84F6F8192C5CB273004616FD /* XCRemoteSwiftPackageReference "SnapKit" */;
