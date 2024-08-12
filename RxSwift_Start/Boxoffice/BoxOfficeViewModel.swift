@@ -67,6 +67,10 @@ class BoxOfficeViewModel {
             .debug("ss")
             .flatMap { value in  // flatMap 으로 옵저버블 안에 옵저버블 벗기기
                 NetworkManager.shared.callBoxOffice(date: value)
+                    .catch { error in
+                        print("에러발생!!\(error)")
+                        return Single<Movie>.never()
+                    }
             }
             .subscribe(with: self) { owner, movie in
                 boxOfficeList.onNext(movie.boxOfficeResult.dailyBoxOfficeList)

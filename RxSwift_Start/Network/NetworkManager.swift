@@ -65,35 +65,33 @@ final class NetworkManager {
         
     }
     
-    func callBoxOffice(date: String) -> Observable<Movie>{
-        let url = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKEY.key)&targetDt=\(date)"
+    func callBoxOffice(date: String) -> Single<Movie> {
         
-        let result = Observable<Movie>.create { observer in
+        let result = Single<Movie>.create { single in
+            let url = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKEY.key)&targetDt=\(date)"
             // url 에러
             guard let url = URL(string: url) else {
-                observer.onError(APIError.invalidURL)
+                single(.failure(APIError.invalidURL))
                 return Disposables.create()
             }
             
             URLSession.shared.dataTask(with: url) { data, response, error in
-                
                 if error != nil {
-                    observer.onError(APIError.unknownResponse)
+                    single(.failure(APIError.unknownResponse))
                     return
                 }
                 
                 guard let response = response as? HTTPURLResponse,(200...299).contains(response.statusCode) else {
-                    observer.onError(APIError.statusError)
+                    single(.failure(APIError.statusError))
                     return
                 }
                 
                 if let data = data,
                    let appData = try? JSONDecoder().decode(Movie.self, from: data) {
                     //                    Single 내부도 이렇게 되어있다
-                    observer.onNext(appData)
-                    observer.onCompleted() // 요청 될 때마다 disposed 될 수 있게 메모리 누수 방지
+                    single(.success(appData))
                 } else {
-                    observer.onError(APIError.decodingError)
+                    single(.failure(APIError.decodingError))
                 }
             }.resume()
             return Disposables.create()
@@ -101,4 +99,41 @@ final class NetworkManager {
             .debug("박스오피스 조회")
         return result
     }
+    
+//    func callBoxOffice(date: String) -> Observable<Movie>{
+//        let url = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKEY.key)&targetDt=\(date)"
+//        
+//        let result = Observable<Movie>.create { observer in
+//            // url 에러
+//            guard let url = URL(string: url) else {
+//                observer.onError(APIError.invalidURL)
+//                return Disposables.create()
+//            }
+//            
+//            URLSession.shared.dataTask(with: url) { data, response, error in
+//                
+//                if error != nil {
+//                    observer.onError(APIError.unknownResponse)
+//                    return
+//                }
+//                
+//                guard let response = response as? HTTPURLResponse,(200...299).contains(response.statusCode) else {
+//                    observer.onError(APIError.statusError)
+//                    return
+//                }
+//                
+//                if let data = data,
+//                   let appData = try? JSONDecoder().decode(Movie.self, from: data) {
+//                    //                    Single 내부도 이렇게 되어있다
+//                    observer.onNext(appData)
+//                    observer.onCompleted() // 요청 될 때마다 disposed 될 수 있게 메모리 누수 방지
+//                } else {
+//                    observer.onError(APIError.decodingError)
+//                }
+//            }.resume()
+//            return Disposables.create()
+//        }
+//            .debug("박스오피스 조회")
+//        return result
+//    }
 }
