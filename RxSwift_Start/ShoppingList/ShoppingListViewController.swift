@@ -12,7 +12,7 @@ final class ShoppingListViewController: RxBaseViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        rootView.tableView.reloadData()
+        rootView.shoppingTableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -22,13 +22,13 @@ final class ShoppingListViewController: RxBaseViewController {
     }
     
     override func bind() {
-    
+        
         let toggledDoneIndex = PublishRelay<Int>()
         let toggledFavoriteIndex = PublishRelay<Int>()
 //        let endEvent = PublishRelay<Void>()
         
-        let input = ShoppingListViewModel.Input(itemSelected: rootView.tableView.rx.modelSelected(ShoppingItem.self),
-                                                itemDeleted: rootView.tableView.rx.modelDeleted(ShoppingItem.self),
+        let input = ShoppingListViewModel.Input(itemSelected: rootView.shoppingTableView.rx.modelSelected(ShoppingItem.self),
+                                                itemDeleted: rootView.shoppingTableView.rx.modelDeleted(ShoppingItem.self),
                                                 recommendationSelected: rootView.collectionView.rx.modelSelected(String.self),
                                                 toggledDoneIndex: toggledDoneIndex,
                                                 toggledFavoriteIndex: toggledFavoriteIndex,
@@ -40,7 +40,7 @@ final class ShoppingListViewController: RxBaseViewController {
         
         // 테이블 뷰
         output.shoppingList
-            .bind(to: rootView.tableView.rx.items(cellIdentifier: ShoppingListTableViewCell.id,
+            .bind(to: rootView.shoppingTableView.rx.items(cellIdentifier: ShoppingListTableViewCell.id,
                                                   cellType: ShoppingListTableViewCell.self))
         { row, element, cell in
             cell.configure(with: element)
@@ -77,6 +77,7 @@ final class ShoppingListViewController: RxBaseViewController {
             owner.rootView.shoppingTextField.sendActions(for: .valueChanged)
         }.disposed(by: disposeBag)
         
+        // MARK: Den's Quest
 //        output.addButtonTap
 //            .map { "" }
 //            .bind(to: rootView.shoppingTextField.rx.text)

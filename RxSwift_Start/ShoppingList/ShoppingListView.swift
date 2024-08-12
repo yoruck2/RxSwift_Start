@@ -51,7 +51,7 @@ final class ShoppingListView: UIView {
         return layout
     }
     
-    let tableView = UITableView().then {
+    let shoppingTableView = UITableView().then {
         $0.register(ShoppingListTableViewCell.self, forCellReuseIdentifier: "ShoppingListTableViewCell")
         $0.separatorStyle = .none
         $0.rowHeight = 60
@@ -67,7 +67,7 @@ final class ShoppingListView: UIView {
         addSubview(shoppingTextField)
         addSubview(addButton)
         addSubview(collectionView)
-        addSubview(tableView)
+        addSubview(shoppingTableView)
     }
     func configureLayout() {
         shoppingTextField.snp.makeConstraints { make in
@@ -84,7 +84,7 @@ final class ShoppingListView: UIView {
             make.top.equalTo(shoppingTextField.snp.bottom)
             make.height.equalTo(100)
         }
-        tableView.snp.makeConstraints { make in
+        shoppingTableView.snp.makeConstraints { make in
             make.horizontalEdges.equalTo(safeAreaLayoutGuide).inset(10)
             make.bottom.equalTo(safeAreaLayoutGuide)
             make.top.equalTo(collectionView.snp.bottom)

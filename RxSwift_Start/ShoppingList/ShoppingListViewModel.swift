@@ -180,10 +180,10 @@ extension ShoppingListViewModel {
     }
     private func selectItem(_ next: ControlEvent<ShoppingItem>) -> Observable<DetailViewController> {
         next
-            .map { item -> DetailViewController in
+            .map {
                 let nextVC = DetailViewController()
-                nextVC.item = item
-                nextVC.textField.text = item.name
+                nextVC.item = $0
+                nextVC.textField.text = $0.name
                 nextVC.itemUpdateHandler = { [weak self] item in
                     self?.updateItem(item)
                 }
