@@ -23,7 +23,7 @@ final class NetworkManager {
     static let shared = NetworkManager()
     private init() {}
     
-    let url = "https://v2.jokeapi.dev/joke/Programming?type=singleaasd"
+    let url = "https://v2.jokeapi.dev/joke/Programming?type=single"
     
     // Obsevable 객체로 Alamofire 통신
     func fetchJoke() -> Observable<Joke> {
@@ -34,7 +34,7 @@ final class NetworkManager {
                     switch response.result {
                     case .success(let success):
                         observer.onNext(success)
-                        observer.onCompleted() // MARK: 이 줄이 없으면 통신 스트림이 계속 유지됨.. -
+//                        observer.onCompleted() // MARK: 이 줄이 없으면 통신 스트림이 계속 유지됨.. -
                         // 큰 옵저버블(유저 인터렉션) 안에 작은 옵저버블(통신) 이 생겼다 사라졌다 하는 구조
                     case .failure(let error):
                         observer.onError(error)
@@ -43,7 +43,6 @@ final class NetworkManager {
             return Disposables.create()
         }.debug("JOKE API 통신")
     }
-    
     
     // Single 객체로 Alamofire 통신
     func fetchJokeWithSingle() -> Single<Joke> {
@@ -66,11 +65,8 @@ final class NetworkManager {
         
     }
     
-    
-    
-    
     func callBoxOffice(date: String) -> Observable<Movie>{
-        let url = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=23a93cbbbc8fdc2ae474716728465cca&targetDt=\(date)"
+        let url = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKEY.key)&targetDt=\(date)"
         
         let result = Observable<Movie>.create { observer in
             // url 에러
@@ -99,9 +95,7 @@ final class NetworkManager {
                 } else {
                     observer.onError(APIError.decodingError)
                 }
-                
             }.resume()
-            
             return Disposables.create()
         }
             .debug("박스오피스 조회")
